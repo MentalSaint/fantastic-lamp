@@ -1,25 +1,28 @@
 #include "menu.h"
+#include "sum.h"
 #include <Arduino.h>
 
 void menu() {
-    if(Serial.available() > 0)  {
-        int incomingData = 0; // can be -1 if read error
+  if (Serial.available() > 0) {
+    int input = Serial.parseInt();  // Read an integer from Serial
 
-        while (incomingData != 1 || incomingData != 2) {
-            incomingData = Serial.parseInt();
-        }
-
-        switch(incomingData) { 
-            case 1:
-                // calculateSum();
-                Serial.println("sum calc");
-                break;
-            case 2:
-                // calculateMultiplication();
-                break;
-            default:
-                Serial.println("other");
-                break;
-        }
+    switch (input) {
+      case 1:
+        sum();
+        break;
+      case 2:
+        // multiply function
+        break;
+      default:
+        Serial.println("Invalid input. Enter 1 for sum, 2 for multiplication.");
+        break;
     }
+
+    // Clear remaining serial input
+    while (Serial.available() > 0) {
+      Serial.read();
+    }
+
+    Serial.println("\nEnter 1 for sum, 2 for mult:");  // Reprint menu
+  }
 }
