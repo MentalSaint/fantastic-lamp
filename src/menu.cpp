@@ -1,5 +1,6 @@
 #include "menu.h"
 #include "sum.h"
+#include "mult.h"
 #include <Arduino.h>
 
 void menu() {
@@ -11,7 +12,7 @@ void menu() {
         sum();
         break;
       case 2:
-        // multiply function
+        mult();
         break;
       default:
         Serial.println("Invalid input. Enter 1 for sum, 2 for multiplication.");
