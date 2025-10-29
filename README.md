@@ -36,3 +36,11 @@ This Arduino project demonstrates two basic functionalities:
    * Enter `1` for addition.
    * Enter `2` for multiplication.
    * Then enter two numbers when asked.
+
+   ---
+
+# This project was made by the following people:
+1. Lucian - multiplication and blinking functions
+2. Kaloyan - menu
+3. Sjonly - sum function
+4. Javier - Readme
